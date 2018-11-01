@@ -6,7 +6,7 @@ public class NoNullArrayList<T> extends ArrayList<T>{
     super(initialCapacity);
   }
   public T set(int index, T element){
-    if (T == null){
+    if (element == null){
       throw new IllegalArgumentException("cannot set null");
     }
     else{
@@ -14,7 +14,7 @@ public class NoNullArrayList<T> extends ArrayList<T>{
     }
   }
   public boolean add(T element){
-    if (T == null){
+    if (element == null){
       throw new IllegalArgumentException("cannot add null");
     }
     else{
@@ -22,7 +22,7 @@ public class NoNullArrayList<T> extends ArrayList<T>{
     }
   }
   public void add(int index, T element){
-    if (T == null){
+    if (element == null){
       throw new IllegalArgumentException("cannot add null");
     }
     else{
