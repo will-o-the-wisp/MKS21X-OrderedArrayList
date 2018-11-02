@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T>{
   public OrderedArrayList(){
     super();
@@ -7,7 +6,23 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
   public OrderedArrayList(int initialCapacity){
     super(initialCapacity);
   }
-  private findIndex(){
-
+  private int findIndex(T element){
+    for(int i = 0;i < size();i++){
+      if(element.compareTo(get(i) >= 0)){
+        return i;
+      }
+    }
+    return i+1;
+  }
+  public boolean add(T element){
+    super.add(findIndex(element),element);
+  }
+  public void add(int index, T element){
+    super.add(findIndex(element),element);
+  }
+  public T set(int index, T element){
+    ans = remove(index);
+    add(element);
+    return ans;
   }
 }
